@@ -8,18 +8,14 @@
 
 #include <xc.h>
 #include "header.h"
+#include "led.h"
 
 
 void seconds_interrupt(void);
-void led_blinking_managing(void);
-
+void led_blinking_managing(short led_array[]);
 
 short seconds_counteur = 0;
-short LED0_STATE = 0;
-short LED1_STATE = 0;
-short LED2_STATE = 0;
-short LED3_STATE = 0;
-short LED4_STATE = 0;
+short led_state_array[NB_LEDS] = {0, 1, 0, 1, 0};
 
 void main(void) {
     
@@ -36,8 +32,6 @@ void main(void) {
     PR2 = 0xFA;
     T2CON = 0x24;
     
-    // TMR2IF
-            
     while(1) {
         
         //RA0 = RA3;
@@ -61,9 +55,7 @@ void interrupt led_blinking(void) {
     if(TMR2IF == 1) {
         TMR2IF = 0;
         
-        led_blinking_managing();
-        RA0 = !RA0;
-        
+        led_blinking_managing(led_state_array);
         
         seconds_counteur++;
         if(seconds_counteur == 100) {
@@ -74,15 +66,9 @@ void interrupt led_blinking(void) {
 }
 
 void seconds_interrupt(void) {
-    LED1_STATE = !LED1_STATE;
-    LED0_STATE = !LED0_STATE;
-    NOP();
-}
-
-void led_blinking_managing(void) {
-    if(LED0_STATE) {
-        RA0 = !RA0;
-    } else {
-        RA0 = 0;
+    int i;
+    for(i=0; i<NB_LEDS; i++) {
+        led_state_array[i] = !led_state_array[i];
     }
 }
+

@@ -1,9 +1,19 @@
 /* 
  * File:   header.h
- * Author: ju
+ * Author: Julien LM
  *
  * Created on July 30, 2017, 2:51 PM
  */
+
+//# define LEDX
+
+# define LED0 RA0
+# define LED1 RA1
+# define LED2 RA2
+# define LED3 RA4
+# define LED4 RA5
+
+#define NB_LEDS 5
 
 
 // PIC12F1822 Configuration Bit Settings
