@@ -3,7 +3,15 @@
 [d edition pro ]
 [d chip 16F18345 ]
 [d frameptr 6 ]
-"4 /home/ju/WORKING_DIR/bike-lighting/sources/lcd.h
+"62 /opt/microchip/xc8/v1.42/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.42/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.42/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"4 /home/ju/WORKING_DIR/bike-lighting/lcd.X/sources/lcd.h
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "26
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
@@ -21,16 +29,8 @@
 [v _Lcd_Shift_Right Lcd_Shift_Right `(v  1 e 1 0 ]
 "110
 [v _Lcd_Shift_Left Lcd_Shift_Left `(v  1 e 1 0 ]
-"42 /home/ju/WORKING_DIR/bike-lighting/sources/main.c
+"42 /home/ju/WORKING_DIR/bike-lighting/lcd.X/sources/main.c
 [v _main main `(i  1 e 2 0 ]
-"62 /opt/microchip/xc8/v1.42/sources/common/float.c
-[v ___ftpack __ftpack `(f  1 e 3 0 ]
-"86 /opt/microchip/xc8/v1.42/sources/common/ftadd.c
-[v ___ftadd __ftadd `(f  1 e 3 0 ]
-"6 /opt/microchip/xc8/v1.42/sources/pic/eeprom.c
-[v _eecpymem eecpymem `(v  1 e 1 0 ]
-"39
-[v _memcpyee memcpyee `(v  1 e 1 0 ]
 "1593 /opt/microchip/xc8/v1.42/include/pic16f18345.h
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1632
@@ -59,14 +59,14 @@
 [v _RC6 RC6 `VEb  1 e 0 @118 ]
 "21666
 [v _RC7 RC7 `VEb  1 e 0 @119 ]
-"42 /home/ju/WORKING_DIR/bike-lighting/sources/main.c
+"42 /home/ju/WORKING_DIR/bike-lighting/lcd.X/sources/main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "44
 [v main@a a `ui  1 a 2 12 ]
-"96
+"92
 } 0
-"97 /home/ju/WORKING_DIR/bike-lighting/sources/lcd.h
+"97 /home/ju/WORKING_DIR/bike-lighting/lcd.X/sources/lcd.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "99

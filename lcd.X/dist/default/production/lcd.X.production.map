@@ -5,7 +5,11 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.42/dat/en_msgs.txt -cs \
   -h+dist/default/production/lcd.X.production.sym \
   --cmf=dist/default/production/lcd.X.production.cmf -z -Q16F18345 \
+<<<<<<< Updated upstream
   -o/tmp/xcXfMcg4N -Mdist/default/production/lcd.X.production.map -E1 \
+=======
+  -o/tmp/xcXzpQfK9 -Mdist/default/production/lcd.X.production.map -E1 \
+>>>>>>> Stashed changes
   -ver=XC8 -ASTACK=02000h-023efh -pstack=STACK -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 \
   -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh \
@@ -30,7 +34,11 @@ Linker command line:
   -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-0800Ah -pconfig=CONFIG \
   -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
+<<<<<<< Updated upstream
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXOY75yb.obj \
+=======
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k /tmp/xcXMDDZxg.obj \
+>>>>>>> Stashed changes
   dist/default/production/lcd.X.production.obj 
 
 Object code version is 3.11
@@ -40,7 +48,11 @@ Machine type is 16F18345
 
 
                 Name                               Link     Load   Length Selector   Space Scale
+<<<<<<< Updated upstream
 /tmp/xcXOY75yb.obj
+=======
+/tmp/xcXMDDZxg.obj
+>>>>>>> Stashed changes
                 end_init                              2        2        2        0       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        4    1000E       0
@@ -57,10 +69,10 @@ dist/default/production/lcd.X.production.obj
                 text1                               65E      65E       1A      CBC       0
                 maintext                            728      728       D5      E50       0
                 cstackCOMMON                         70       70        E       70       1
-                stringtext5                         83D      83D        A     1000       0
-                stringtext4                         831      831        C     1000       0
-                stringtext3                         824      824        D     1000       0
-                stringtext2                         814      814       10     1000       0
+                stringtext5                         83E      83E        4     1000       0
+                stringtext4                         832      832        C     1000       0
+                stringtext3                         825      825        D     1000       0
+                stringtext2                         814      814       11     1000       0
                 stringtext1                         800      800       14     1000       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -82,10 +94,10 @@ TOTAL           Name                               Link     Load   Length     Sp
                 maintext                            728      728       D5         0
 
         CLASS   STRCODE        
-                stringtext5                         83D      83D        A         0
-                stringtext4                         831      831        C         0
-                stringtext3                         824      824        D         0
-                stringtext2                         814      814       10         0
+                stringtext5                         83E      83E        4         0
+                stringtext4                         832      832        C         0
+                stringtext3                         825      825        D         0
+                stringtext2                         814      814       11         0
                 stringtext1                         800      800       14         0
 
         CLASS   STRING         
@@ -256,7 +268,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 text6                          0006E4  000044  000728       DC8       0  CODE        2
                 maintext                       000728  0000D5  0007FD       E50       0  CODE        2
                 cinit                          0007FD  000003  000800       FFA       0  CODE        2
-                stringtext1                    000800  000047  000847      1000       0  STRCODE     2
+                stringtext1                    000800  000042  000842      1000       0  STRCODE     2
                 config                         008007  000004  00800B     1000E       0  CONFIG      2
 
 
@@ -278,12 +290,12 @@ UNUSED ADDRESS RANGES
         BANK9            004A0-004EF              50           1
         BIGRAM           02000-023EF             3F0           1
         CODE             00004-00619             616           2
-                         00847-01FFF             800
+                         00842-01FFF             800
         CONST            00004-00619             100           2
-                         00847-01FFF             100
+                         00842-01FFF             100
         EEDATA           0F000-0F0FF             100           2
         ENTRY            00004-00619             100           2
-                         00847-01FFF             100
+                         00842-01FFF             100
         IDLOC            08000-08003               4           2
         RAM              00020-0006F              50           1
                          000A0-000EF              50
@@ -332,9 +344,9 @@ UNUSED ADDRESS RANGES
         SFR9             00480-0049F              20           1
         STACK            02000-023EF             3F0           1
         STRCODE          00004-00619             616           2
-                         00847-01FFF            17B9
+                         00842-01FFF            17BE
         STRING           00004-00619             100           2
-                         00847-01FFF             100
+                         00842-01FFF             100
 
                                   Symbol Table
 
@@ -604,9 +616,9 @@ __pcstackCOMMON            cstackCOMMON 00070
 __pmaintext                maintext     00728
 __pstringtext1             stringtext1  00800
 __pstringtext2             stringtext2  00814
-__pstringtext3             stringtext3  00824
-__pstringtext4             stringtext4  00831
-__pstringtext5             stringtext5  0083D
+__pstringtext3             stringtext3  00825
+__pstringtext4             stringtext4  00832
+__pstringtext5             stringtext5  0083E
 __pstringtext6             stringtext6  00000
 __ptext1                   text1        0065E
 __ptext2                   text2        00678
@@ -649,7 +661,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 42 in file "../sources/main.c"
+		line 42 in file "sources/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -684,11 +696,11 @@ Total ram usage:        4 bytes
 
  *************** function _Lcd_Write_String *****************
  Defined at:
-		line 97 in file "../sources/lcd.h"
+		line 97 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
   a               2    5[COMMON] PTR unsigned char 
-		 -> STR_5(20), STR_4(12), STR_3(13), STR_2(10), 
-		 -> STR_1(16), 
+		 -> STR_5(20), STR_4(12), STR_3(13), STR_2(4), 
+		 -> STR_1(17), 
  Auto vars:     Size  Location     Type
   i               2    8[COMMON] int 
  Return value:  Size  Location     Type
@@ -716,7 +728,7 @@ Total ram usage:        5 bytes
 
  *************** function _Lcd_Write_Char *****************
  Defined at:
-		line 81 in file "../sources/lcd.h"
+		line 81 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
   a               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -749,7 +761,7 @@ Total ram usage:        4 bytes
 
  *************** function _Lcd_Shift_Right *****************
  Defined at:
-		line 104 in file "../sources/lcd.h"
+		line 104 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -779,7 +791,7 @@ Total ram usage:        0 bytes
 
  *************** function _Lcd_Shift_Left *****************
  Defined at:
-		line 110 in file "../sources/lcd.h"
+		line 110 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -809,7 +821,7 @@ Total ram usage:        0 bytes
 
  *************** function _Lcd_Set_Cursor *****************
  Defined at:
-		line 41 in file "../sources/lcd.h"
+		line 41 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
   a               1    wreg     unsigned char 
   b               1    3[COMMON] unsigned char 
@@ -843,7 +855,7 @@ Total ram usage:        7 bytes
 
  *************** function _Lcd_Init *****************
  Defined at:
-		line 62 in file "../sources/lcd.h"
+		line 62 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -874,7 +886,7 @@ Total ram usage:        1 bytes
 
  *************** function _Lcd_Clear *****************
  Defined at:
-		line 35 in file "../sources/lcd.h"
+		line 35 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -904,7 +916,7 @@ Total ram usage:        0 bytes
 
  *************** function _Lcd_Cmd *****************
  Defined at:
-		line 26 in file "../sources/lcd.h"
+		line 26 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
   a               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -938,7 +950,7 @@ Total ram usage:        2 bytes
 
  *************** function _Lcd_Port *****************
  Defined at:
-		line 4 in file "../sources/lcd.h"
+		line 4 in file "sources/lcd.h"
  Parameters:    Size  Location     Type
   a               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -971,7 +983,17 @@ Total ram usage:        1 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-../sources/lcd.h
+sources/main.c
+		_main          		CODE           	0728	0000	214
+
+sources/main.c estimated size: 214
+
+shared
+		__initialization		CODE           	07FD	0000	1
+
+shared estimated size: 1
+
+sources/lcd.h
 		_Lcd_Write_String		CODE           	065E	0000	27
 		_Lcd_Shift_Left		CODE           	0622	0000	9
 		_Lcd_Init      		CODE           	06E4	0000	69
@@ -982,15 +1004,5 @@ Module		Function		Class		Link	Load	Size
 		_Lcd_Clear     		CODE           	061A	0000	9
 		_Lcd_Port      		CODE           	0646	0000	25
 
-../sources/lcd.h estimated size: 279
-
-shared
-		__initialization		CODE           	07FD	0000	1
-
-shared estimated size: 1
-
-../sources/main.c
-		_main          		CODE           	0728	0000	214
-
-../sources/main.c estimated size: 214
+sources/lcd.h estimated size: 279
 

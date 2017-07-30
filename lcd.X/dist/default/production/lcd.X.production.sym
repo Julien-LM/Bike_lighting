@@ -184,7 +184,7 @@ __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __Hstringtext3 0 0 ABS 0
 __Lstringtext3 0 0 ABS 0
-__pstringtext3 824 0 STRCODE 0
+__pstringtext3 825 0 STRCODE 0
 __end_of__initialization 7FD 0 CODE 0
 Lcd_Write_String@a 75 0 COMMON 1
 Lcd_Write_String@i 78 0 COMMON 1
@@ -212,7 +212,7 @@ __end_of_Lcd_Set_Cursor 6E4 0 CODE 0
 __size_of_Lcd_Set_Cursor 0 0 ABS 0
 __Hstringtext4 0 0 ABS 0
 __Lstringtext4 0 0 ABS 0
-__pstringtext4 831 0 STRCODE 0
+__pstringtext4 832 0 STRCODE 0
 __CFG_DEBUG$OFF 0 0 ABS 0
 __size_of_Lcd_Shift_Left 0 0 ABS 0
 __end_of_Lcd_Clear 622 0 CODE 0
@@ -272,7 +272,7 @@ __Hreset_vec 2 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 __Hstringtext5 0 0 ABS 0
 __Lstringtext5 0 0 ABS 0
-__pstringtext5 83D 0 STRCODE 0
+__pstringtext5 83E 0 STRCODE 0
 intlevel0 0 0 CODE 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 CODE 0
@@ -314,13 +314,14 @@ text5 D48 DC7 CODE D48 0
 text2 CF0 D47 CODE CF0 0
 text1 CBC CEF CODE CBC 0
 text9 C8C CBB CODE C8C 0
-stringtext1 1000 108D STRCODE 1000 0
+stringtext1 1000 1083 STRCODE 1000 0
 text8 C64 C8B CODE C64 0
 text3 C54 C63 CODE C54 0
 text4 C44 C53 CODE C44 0
 text7 C34 C43 CODE C34 0
 %locals
 dist/default/production/lcd.X.production.obj
+<<<<<<< Updated upstream
 /tmp/xcXQl2hy9
 922 7FD 0 CODE 0
 925 7FD 0 CODE 0
@@ -328,6 +329,15 @@ dist/default/production/lcd.X.production.obj
 933 7FD 0 CODE 0
 934 7FE 0 CODE 0
 ../sources/main.c
+=======
+/tmp/xcXvekpKD
+917 7FD 0 CODE 0
+920 7FD 0 CODE 0
+926 7FD 0 CODE 0
+928 7FD 0 CODE 0
+929 7FE 0 CODE 0
+sources/main.c
+>>>>>>> Stashed changes
 42 728 0 CODE 0
 45 728 0 CODE 0
 46 72A 0 CODE 0
@@ -338,36 +348,36 @@ dist/default/production/lcd.X.production.obj
 51 731 0 CODE 0
 52 733 0 CODE 0
 54 734 0 CODE 0
-61 737 0 CODE 0
-62 73A 0 CODE 0
-63 740 0 CODE 0
-64 747 0 CODE 0
-65 74D 0 CODE 0
-66 754 0 CODE 0
-67 760 0 CODE 0
-68 763 0 CODE 0
-69 769 0 CODE 0
-70 770 0 CODE 0
-71 776 0 CODE 0
-72 77D 0 CODE 0
-73 789 0 CODE 0
-74 78C 0 CODE 0
-75 792 0 CODE 0
-77 799 0 CODE 0
-79 7A2 0 CODE 0
-80 7AE 0 CODE 0
-77 7B1 0 CODE 0
-83 7BC 0 CODE 0
-85 7C5 0 CODE 0
-86 7D1 0 CODE 0
-83 7D4 0 CODE 0
-89 7DF 0 CODE 0
-90 7E2 0 CODE 0
-91 7E8 0 CODE 0
-92 7EC 0 CODE 0
-93 7F0 0 CODE 0
+57 737 0 CODE 0
+58 73A 0 CODE 0
+59 740 0 CODE 0
+60 747 0 CODE 0
+61 74D 0 CODE 0
+62 754 0 CODE 0
+63 760 0 CODE 0
+64 763 0 CODE 0
+65 769 0 CODE 0
+66 770 0 CODE 0
+67 776 0 CODE 0
+68 77D 0 CODE 0
+69 789 0 CODE 0
+70 78C 0 CODE 0
+71 792 0 CODE 0
+73 799 0 CODE 0
+75 7A2 0 CODE 0
+76 7AE 0 CODE 0
+73 7B1 0 CODE 0
+79 7BC 0 CODE 0
+81 7C5 0 CODE 0
+82 7D1 0 CODE 0
+79 7D4 0 CODE 0
+85 7DF 0 CODE 0
+86 7E2 0 CODE 0
+87 7E8 0 CODE 0
+88 7EC 0 CODE 0
+89 7F0 0 CODE 0
 55 7FC 0 CODE 0
-../sources/lcd.h
+sources/lcd.h
 97 65E 0 CODE 0
 100 65E 0 CODE 0
 101 669 0 CODE 0

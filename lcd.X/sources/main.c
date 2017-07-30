@@ -41,56 +41,52 @@
 
 int main()
 {
-  unsigned int a;
-  TRISB = 0x00;
-  ANSC4 = 0;
-  ANSC5 = 0;
-  ANSC6 = 0;
-  ANSC7 = 0;
-  TRISC = 0x00;
-  ANSB5 = 0;
-  ANSB6 = 0;
+    unsigned int a;
+    TRISB = 0x00;
+    ANSC4 = 0;
+    ANSC5 = 0;
+    ANSC6 = 0;
+    ANSC7 = 0;
+    TRISC = 0x00;
+    ANSB5 = 0;
+    ANSB6 = 0;
 
-  Lcd_Init();
-  while(1)
-  {
-      /*RB7 = 1;
-      __delay_ms(2000);
-      RB7 = 0;
-      __delay_ms(2000);*/
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("LCD Library for");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("MPLAB XC8");
-    __delay_ms(2000);
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Developed By");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("electroSome");
-    __delay_ms(2000);
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("www.electroSome.com");
-
-    for(a=0;a<15;a++)
+    Lcd_Init();
+    while(1)
     {
-        __delay_ms(300);
-        Lcd_Shift_Left();
-    }
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("Program starting");
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String("...");
+        __delay_ms(2000);
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("Developed By");
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String("electroSome");
+        __delay_ms(2000);
+        Lcd_Clear();
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("www.electroSome.com");
 
-    for(a=0;a<15;a++)
-    {
-        __delay_ms(300);
-        Lcd_Shift_Right();
-    }
+        for(a=0;a<15;a++)
+        {
+            __delay_ms(300);
+            Lcd_Shift_Left();
+        }
 
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_Char('e');
-    Lcd_Write_Char('S');
-    __delay_ms(2000);
-  }
-  return 0;
+        for(a=0;a<15;a++)
+        {
+            __delay_ms(300);
+            Lcd_Shift_Right();
+        }
+
+        Lcd_Clear();
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_Char('e');
+        Lcd_Write_Char('S');
+        __delay_ms(2000);
+    }
+    return 0;
 }
