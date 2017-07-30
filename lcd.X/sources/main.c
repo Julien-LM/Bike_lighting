@@ -1,11 +1,11 @@
 #define _XTAL_FREQ 16000000
 
-/*#define RS RB6
+#define RS RB6
 #define EN RB5
 #define D4 RC4
 #define D5 RC5
 #define D6 RC6
-#define D7 RC7*/
+#define D7 RC7
 
 #include <xc.h>
 #include "lcd.h";

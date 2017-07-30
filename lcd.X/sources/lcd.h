@@ -4,32 +4,32 @@
 void Lcd_Port(char a)
 {
 	if(a & 1)
-		RC4 = 1;
+		D4 = 1;
 	else
-		RC4 = 0;
+		D4 = 0;
 
 	if(a & 2)
-		RC5 = 1;
+		D5 = 1;
 	else
-		RC5 = 0;
+		D5 = 0;
 
 	if(a & 4)
-		RC6 = 1;
+		D6 = 1;
 	else
-		RC6 = 0;
+		D6 = 0;
 
 	if(a & 8)
-		RC7 = 1;
+		D7 = 1;
 	else
-		RC7 = 0;
+		D7 = 0;
 }
 void Lcd_Cmd(char a)
 {
-	RB6 = 0;             // => RS = 0
+	RS = 0;             // => RS = 0
 	Lcd_Port(a);
-	RB5  = 1;             // => E = 1
+	EN  = 1;             // => E = 1
         __delay_ms(4);
-        RB5  = 0;             // => E = 0
+        EN  = 0;             // => E = 0
 }
 
 Lcd_Clear()
@@ -83,15 +83,15 @@ void Lcd_Write_Char(char a)
    char temp,y;
    temp = a&0x0F;
    y = a&0xF0;
-   RB6 = 1;             // => RS = 1
+   RS = 1;             // => RS = 1
    Lcd_Port(y>>4);             //Data transfer
-   RB5 = 1;
+   EN = 1;
    __delay_us(40);
-   RB5 = 0;
+   EN = 0;
    Lcd_Port(temp);
-   RB5 = 1;
+   EN = 1;
    __delay_us(40);
-   RB5 = 0;
+   EN = 0;
 }
 
 void Lcd_Write_String(char *a)

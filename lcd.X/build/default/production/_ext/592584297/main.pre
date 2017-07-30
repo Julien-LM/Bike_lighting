@@ -3742,7 +3742,7 @@ struct {
 unsigned MODE :3;
 unsigned :3;
 unsigned LD :1;
-unsigned EN :1;
+unsigned RB5 :1;
 };
 struct {
 unsigned MODE0 :1;
@@ -3986,7 +3986,7 @@ struct {
 unsigned MODE :3;
 unsigned :3;
 unsigned LD :1;
-unsigned EN :1;
+unsigned RB5 :1;
 };
 struct {
 unsigned MODE0 :1;
@@ -5854,7 +5854,7 @@ unsigned INTN :1;
 unsigned INTP :1;
 unsigned OUT :1;
 unsigned :1;
-unsigned EN :1;
+unsigned RB5 :1;
 };
 struct {
 unsigned MODE0 :1;
@@ -6164,7 +6164,7 @@ unsigned INTN :1;
 unsigned INTP :1;
 unsigned OUT :1;
 unsigned :1;
-unsigned EN :1;
+unsigned RB5 :1;
 };
 struct {
 unsigned MODE0 :1;
@@ -6474,7 +6474,7 @@ unsigned INTN :1;
 unsigned INTP :1;
 unsigned OUT :1;
 unsigned :1;
-unsigned EN :1;
+unsigned RB5 :1;
 };
 struct {
 unsigned MODE0 :1;
@@ -6784,7 +6784,7 @@ unsigned INTN :1;
 unsigned INTP :1;
 unsigned OUT :1;
 unsigned :1;
-unsigned EN :1;
+unsigned RB5 :1;
 };
 struct {
 unsigned MODE0 :1;

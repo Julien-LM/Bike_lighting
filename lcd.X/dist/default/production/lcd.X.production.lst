@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.42 build -159332390 
-                                                                                               Sun Jul 30 09:28:00 2017
+                                                                                               Sun Jul 30 10:20:52 2017
 
 Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130522
      1                           	processor	16F18345
@@ -2058,7 +2058,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.42 build -159332390 
-Symbol Table                                                                                   Sun Jul 30 09:28:00 2017
+Symbol Table                                                                                   Sun Jul 30 10:20:52 2017
 
               __CFG_CP$OFF 0000                         l33 064C                         l35 0652  
                        l37 0657                         l39 065C                         u55 0688  

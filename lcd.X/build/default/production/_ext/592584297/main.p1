@@ -3165,7 +3165,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18345.h: 9615: unsigned MODE :3;
 [; ;pic16f18345.h: 9616: unsigned :3;
 [; ;pic16f18345.h: 9617: unsigned LD :1;
-[; ;pic16f18345.h: 9618: unsigned EN :1;
+[; ;pic16f18345.h: 9618: unsigned RB5 :1;
 [; ;pic16f18345.h: 9619: };
 [; ;pic16f18345.h: 9620: struct {
 [; ;pic16f18345.h: 9621: unsigned MODE0 :1;
@@ -3382,7 +3382,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18345.h: 10352: unsigned MODE :3;
 [; ;pic16f18345.h: 10353: unsigned :3;
 [; ;pic16f18345.h: 10354: unsigned LD :1;
-[; ;pic16f18345.h: 10355: unsigned EN :1;
+[; ;pic16f18345.h: 10355: unsigned RB5 :1;
 [; ;pic16f18345.h: 10356: };
 [; ;pic16f18345.h: 10357: struct {
 [; ;pic16f18345.h: 10358: unsigned MODE0 :1;
@@ -4990,7 +4990,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18345.h: 15217: unsigned INTP :1;
 [; ;pic16f18345.h: 15218: unsigned OUT :1;
 [; ;pic16f18345.h: 15219: unsigned :1;
-[; ;pic16f18345.h: 15220: unsigned EN :1;
+[; ;pic16f18345.h: 15220: unsigned RB5 :1;
 [; ;pic16f18345.h: 15221: };
 [; ;pic16f18345.h: 15222: struct {
 [; ;pic16f18345.h: 15223: unsigned MODE0 :1;
@@ -5270,7 +5270,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18345.h: 16277: unsigned INTP :1;
 [; ;pic16f18345.h: 16278: unsigned OUT :1;
 [; ;pic16f18345.h: 16279: unsigned :1;
-[; ;pic16f18345.h: 16280: unsigned EN :1;
+[; ;pic16f18345.h: 16280: unsigned RB5 :1;
 [; ;pic16f18345.h: 16281: };
 [; ;pic16f18345.h: 16282: struct {
 [; ;pic16f18345.h: 16283: unsigned MODE0 :1;
@@ -5550,7 +5550,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18345.h: 17337: unsigned INTP :1;
 [; ;pic16f18345.h: 17338: unsigned OUT :1;
 [; ;pic16f18345.h: 17339: unsigned :1;
-[; ;pic16f18345.h: 17340: unsigned EN :1;
+[; ;pic16f18345.h: 17340: unsigned RB5 :1;
 [; ;pic16f18345.h: 17341: };
 [; ;pic16f18345.h: 17342: struct {
 [; ;pic16f18345.h: 17343: unsigned MODE0 :1;
@@ -5830,7 +5830,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18345.h: 18397: unsigned INTP :1;
 [; ;pic16f18345.h: 18398: unsigned OUT :1;
 [; ;pic16f18345.h: 18399: unsigned :1;
-[; ;pic16f18345.h: 18400: unsigned EN :1;
+[; ;pic16f18345.h: 18400: unsigned RB5 :1;
 [; ;pic16f18345.h: 18401: };
 [; ;pic16f18345.h: 18402: struct {
 [; ;pic16f18345.h: 18403: unsigned MODE0 :1;

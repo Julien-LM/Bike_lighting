@@ -11,10 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXCkvHUL.obj
-reset_vec CODE 0 0 0 2 2
-end_init CODE 0 2 2 2 2
-config CONFIG 0 8007 8007 4 2
 $dist/default/production/lcd.X.production.obj
 cinit CODE 0 7FD 7FD 3 2
 text1 CODE 0 65E 65E 1A 2
@@ -33,6 +29,10 @@ stringtext2 STRCODE 0 814 814 10 2
 stringtext3 STRCODE 0 824 824 D 2
 stringtext4 STRCODE 0 831 831 C 2
 stringtext5 STRCODE 0 83D 83D A 2
+$/tmp/xcXOY75yb.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 2 2 2 2
+config CONFIG 0 8007 8007 4 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -125,11 +125,11 @@ STRING 847-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/lcd.X.production.obj
-7FD cinit CODE >922:/tmp/xcXKG58Fw
-7FD cinit CODE >925:/tmp/xcXKG58Fw
-7FD cinit CODE >931:/tmp/xcXKG58Fw
-7FD cinit CODE >933:/tmp/xcXKG58Fw
-7FE cinit CODE >934:/tmp/xcXKG58Fw
+7FD cinit CODE >922:/tmp/xcXQl2hy9
+7FD cinit CODE >925:/tmp/xcXQl2hy9
+7FD cinit CODE >931:/tmp/xcXQl2hy9
+7FD cinit CODE >933:/tmp/xcXQl2hy9
+7FE cinit CODE >934:/tmp/xcXQl2hy9
 646 text9 CODE >4:/home/ju/WORKING_DIR/bike-lighting/sources/lcd.h
 647 text9 CODE >6:/home/ju/WORKING_DIR/bike-lighting/sources/lcd.h
 649 text9 CODE >7:/home/ju/WORKING_DIR/bike-lighting/sources/lcd.h
@@ -278,22 +278,22 @@ __end_of_Lcd_Init E50 0 CODE 0 text6 dist/default/production/lcd.X.production.ob
 __end_of_Lcd_Port CBC 0 CODE 0 text9 dist/default/production/lcd.X.production.obj
 main@a 7C 0 COMMON 1 cstackCOMMON dist/default/production/lcd.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack /tmp/xcXCkvHUL.obj
+___sp 0 0 STACK 2 stack /tmp/xcXOY75yb.obj
 _main E50 0 CODE 0 maintext dist/default/production/lcd.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/lcd.X.production.obj
 _Lcd_Write_Char CF0 0 CODE 0 text2 dist/default/production/lcd.X.production.obj
-start 4 0 CODE 0 init /tmp/xcXCkvHUL.obj
+start 4 0 CODE 0 init /tmp/xcXOY75yb.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
 Lcd_Port@a 70 0 COMMON 1 cstackCOMMON dist/default/production/lcd.X.production.obj
 __CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
 Lcd_Write_Char@temp 72 0 COMMON 1 cstackCOMMON dist/default/production/lcd.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 CODE 0 functab /tmp/xcXCkvHUL.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcXCkvHUL.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcXCkvHUL.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcXCkvHUL.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcXCkvHUL.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcXCkvHUL.obj
+intlevel0 0 0 CODE 0 functab /tmp/xcXOY75yb.obj
+intlevel1 0 0 CODE 0 functab /tmp/xcXOY75yb.obj
+intlevel2 0 0 CODE 0 functab /tmp/xcXOY75yb.obj
+intlevel3 0 0 CODE 0 functab /tmp/xcXOY75yb.obj
+intlevel4 0 0 CODE 0 functab /tmp/xcXOY75yb.obj
+intlevel5 0 0 CODE 0 functab /tmp/xcXOY75yb.obj
 wtemp0 7E 0 ABS 0 - dist/default/production/lcd.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __size_of_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
@@ -308,7 +308,7 @@ _Lcd_Write_String CBC 0 CODE 0 text1 dist/default/production/lcd.X.production.ob
 _Lcd_Shift_Left C44 0 CODE 0 text4 dist/default/production/lcd.X.production.obj
 _Lcd_Shift_Right C54 0 CODE 0 text3 dist/default/production/lcd.X.production.obj
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcXCkvHUL.obj
+___int_sp 0 0 STACK 2 stack /tmp/xcXOY75yb.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -459,7 +459,7 @@ __Lintentry 4 0 CODE 0 intentry -
 __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
 Lcd_Write_String@a 75 0 COMMON 1 cstackCOMMON dist/default/production/lcd.X.production.obj
 Lcd_Write_String@i 78 0 COMMON 1 cstackCOMMON dist/default/production/lcd.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXCkvHUL.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXOY75yb.obj
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
 __size_of_Lcd_Shift_Right 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
 __end_of_Lcd_Cmd C8C 0 CODE 0 text8 dist/default/production/lcd.X.production.obj
@@ -501,8 +501,8 @@ __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/lcd.X.production.obj
-stackhi 23EF 0 ABS 0 - /tmp/xcXCkvHUL.obj
-stacklo 2000 0 ABS 0 - /tmp/xcXCkvHUL.obj
+stackhi 23EF 0 ABS 0 - /tmp/xcXOY75yb.obj
+stacklo 2000 0 ABS 0 - /tmp/xcXOY75yb.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
