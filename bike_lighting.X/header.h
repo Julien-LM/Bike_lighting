@@ -5,7 +5,9 @@
  * Created on July 30, 2017, 2:51 PM
  */
 
-//# define LEDX
+#ifndef HEADER_H
+#define	HEADER_H
+#endif	/* HEADER_H */
 
 # define LED0 RA0
 # define LED1 RA1
@@ -17,8 +19,6 @@
 
 
 // PIC12F1822 Configuration Bit Settings
-
-#define _XTAL_FREQ 500000
 
 // CONFIG1
 #pragma config FOSC = INTOSC    // Oscillator Selection (HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2 pins)
