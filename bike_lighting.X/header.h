@@ -17,6 +17,12 @@
 
 #define NB_LEDS 5
 
+#define FULL    0   // full LEDs on
+#define BLINK   1   // blink 5 together
+#define CHASE   2   // chase 1 or 2 LEDs chasing
+#define SPACE   3   // Random blinking
+#define FAST    4   // 2-3 fast blinking then a break
+
 
 // PIC12F1822 Configuration Bit Settings
 
