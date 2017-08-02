@@ -14,41 +14,37 @@
 
 void seconds_interrupt(void);
 void led_blinking_managing(short led_array[]);
+void full(void);
+void blink(void);
+void chase(void);
 
 short led_state_array[NB_LEDS] = {0, 0, 0, 0, 0};
 
 short seconds_counteur = 0;
-short mode = 0;
+short blink_counter = 0;
+short chase_counter = 0;
+short chase_position = 0;
+short mode = 2;
 
 void main(void) {
     init();
     while(1) {
         switch(mode) {
-            case 0:
-                led_state_array[0] = 1;
-                led_state_array[1] = 0;
-                led_state_array[2] = 0;
-                led_state_array[3] = 0;
-                break;
-            case 1:
-                led_state_array[0] = 0;
-                led_state_array[1] = 1;
-                led_state_array[2] = 0;
-                led_state_array[3] = 0;                
-                break;            
-            case 2:
-                led_state_array[0] = 0;
-                led_state_array[1] = 0;
-                led_state_array[2] = 1;
-                led_state_array[3] = 0;                
-                break;
+            case FULL:
+                full();
+                break;     
             case 3:
                 led_state_array[0] = 0;
                 led_state_array[1] = 0;
                 led_state_array[2] = 0;
-                led_state_array[3] = 1;                
+                led_state_array[3] = 1;
+                led_state_array[4] = 0;                
                 break;            
             case 4:
+                led_state_array[0] = 0;
+                led_state_array[1] = 0;
+                led_state_array[2] = 0;
+                led_state_array[3] = 0;
                 led_state_array[4] = 1;
                 break;
         }
@@ -57,11 +53,13 @@ void main(void) {
 
 void interrupt led_blinking(void) {
     // Interrupt-On-Change interrupt flag
-    if(IOCIF) {
+    if(IOCAF3) {
         IOCAF = 0;
-        mode++;
-        if(mode == 5) {
-            mode = 0;
+        if(RA3) {
+            mode++;
+            if(mode == 5) {
+                mode = 0;
+            }
         }
     }
     
@@ -76,14 +74,64 @@ void interrupt led_blinking(void) {
             seconds_counteur = 0;
             seconds_interrupt();
         }
+        if(mode == BLINK) {
+            blink_counter++;
+            if(blink_counter == 50) {
+                blink_counter = 0;
+                blink();
+            }
+        } else if (mode == CHASE) {
+            chase_counter++;
+            if(chase_counter == 5) {
+                chase_counter = 0;
+                chase_position++;
+                if(chase_position == NB_LEDS){
+                    chase_position = 0;
+                }
+                chase();
+            }
+        }
     }
 }
 
 void seconds_interrupt(void) {
-    int i;
-    led_state_array[4] = !led_state_array[4];
-    /*for(i=0; i<NB_LEDS; i++) {
-        led_state_array[i] = !led_state_array[i];
-    }*/
+    NOP();
 }
+
+void full(void) {
+    led_state_array[0] = 1;
+    led_state_array[1] = 1;
+    led_state_array[2] = 1;
+    led_state_array[3] = 1;
+    led_state_array[4] = 1;
+}
+
+void blink(void) {
+    int i;
+    for(i=0; i<NB_LEDS; i++) {
+        led_state_array[i] = !led_state_array[i];
+    }
+}
+
+void chase(void) {
+    int i;
+    for(i=0; i<NB_LEDS; i++) {
+        if(chase_position+CHASE_SIZE > i && chase_position <= i) {
+            led_state_array[i] = 1;
+        } else if(chase_position+CHASE_SIZE-NB_LEDS > i) {
+            led_state_array[i] = 1;
+        } else {
+            led_state_array[i] = 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+// CHASE_SIZE
 

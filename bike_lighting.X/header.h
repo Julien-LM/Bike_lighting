@@ -23,6 +23,8 @@
 #define SPACE   3   // Random blinking
 #define FAST    4   // 2-3 fast blinking then a break
 
+#define CHASE_SIZE  1
+
 
 // PIC12F1822 Configuration Bit Settings
 

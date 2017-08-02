@@ -26,18 +26,28 @@ void init(void){
     TMR2IE = 1;     // Enables the Timer2 to PR2 match interrupt
     
     // Internal Oscillator Frequency Select bits
-    OSCCONbits.IRCF = 0;    // Set freq to 31kHz
+    OSCCONbits.IRCF = 7;    // Set freq to 31kHz
     OSCCONbits.SCS = 2;     // Internal oscillator block
 
+    /*
     // XTAL = 31KHz, efficient 7,75 kHz
     PR2 = 0x0B;
     T2CONbits.TMR2ON = 1;   //Timer2 is on
     T2CONbits.T2CKPS = 0;   // Prescaler is 1
-    T2CONbits.T2OUTPS = 6;  // 1:7 Postscaler
+    T2CONbits.T2OUTPS = 6;  // 1:7 Postscaler*/
+
+    // XTAL = 500KHz, efficient 125kHz
+    PR2 = 0xFA;
+    T2CONbits.TMR2ON = 1;   //Timer2 is on
+    T2CONbits.T2CKPS = 0;   // Prescaler is 1
+    T2CONbits.T2OUTPS = 4;  // 1:5 Postscaler*/
     
     // Interrupt-on-change
     IOCIE = 1;      // Enables the interrupt-on-change
-    IOCAP = 0x08;   // Enable IOCAN3
-    IOCAN = 0x00;   // DIsable every pin
+    IOCAP3 = 0;
+    IOCAN3 = 1;
+
+    //IOCAP = 0x08;   // Enable IOCAP3
+   // IOCAN = 0x00;   // DIsable every pin
     
 }
