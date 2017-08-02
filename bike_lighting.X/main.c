@@ -20,11 +20,11 @@ void chase(void);
 
 short led_state_array[NB_LEDS] = {0, 0, 0, 0, 0};
 
-short seconds_counteur = 0;
-short blink_counter = 0;
-short chase_counter = 0;
-short chase_position = 0;
-short mode = 2;
+unsigned char seconds_counteur = 0;
+unsigned char blink_counter = 0;
+unsigned char chase_counter = 0;
+unsigned char chase_position = 0;
+unsigned char mode = 2;
 
 void main(void) {
     init();
@@ -107,14 +107,14 @@ void full(void) {
 }
 
 void blink(void) {
-    int i;
+    unsigned char i;
     for(i=0; i<NB_LEDS; i++) {
         led_state_array[i] = !led_state_array[i];
     }
 }
 
 void chase(void) {
-    int i;
+    unsigned char i;
     for(i=0; i<NB_LEDS; i++) {
         if(chase_position+CHASE_SIZE > i && chase_position <= i) {
             led_state_array[i] = 1;
@@ -125,13 +125,3 @@ void chase(void) {
         }
     }
 }
-
-
-
-
-
-
-
-
-// CHASE_SIZE
-
