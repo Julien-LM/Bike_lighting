@@ -17,13 +17,20 @@
 
 #define NB_LEDS 5
 
-#define FULL    0   // full LEDs on
-#define BLINK   1   // blink 5 together
-#define CHASE   2   // chase 1 or 2 LEDs chasing
-#define SPACE   3   // Random blinking
-#define FAST    4   // 2-3 fast blinking then a break
+#define FULL            0   // full LEDs on
+#define BLINK           1   // blink 5 together
+#define CHASE           2   // chase 1 or 2 LEDs chasing
+#define SPACE           3   // Random blinking
+#define FAST            4   // 2-3 fast blinking then a break
+#define CHASE_MISA      5   // chase from bottom to top, then the reverse
+#define WARNING         6   // special mode to show an issue, top led blink
 
-#define CHASE_SIZE  1
+#define CHASE_SIZE      1
+
+#define CHASE_MODE      "to_bot"
+
+#define LED_ON  1
+#define LED_OFF 0
 
 
 // PIC12F1822 Configuration Bit Settings

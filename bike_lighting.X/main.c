@@ -16,41 +16,28 @@
 
 void seconds_interrupt(void);
 void led_blinking_managing(short led_array[]);
-void full(void);
+void full_on(void);
+void full_off(void);
 void blink(void);
 void chase(void);
 void space(void);
+void fast(unsigned char periode);
 
 short led_state_array[NB_LEDS] = {0, 0, 0, 0, 0};
 
 unsigned char seconds_counteur = 0;
-unsigned char blink_counter = 0;
-unsigned char chase_counter = 0;
-unsigned char chase_position = 0;
-unsigned char space_counter = 0;
-unsigned char mode = 3;
+unsigned char main_counter = 0;
+unsigned char secondary_counter = 0;
+unsigned char chase_direction = 0;
+
+unsigned char mode = CHASE_MISA;
 
 void main(void) {
     init();
     
-    unsigned int k = 0;
-    srand(1);
-    
     while(1) {
-        int x=0;
-        
-        x = 9%1;
-        switch(mode) {
-            case FULL:
-                full();
-                break;            
-            case 4:
-                led_state_array[0] = 0;
-                led_state_array[1] = 0;
-                led_state_array[2] = 0;
-                led_state_array[3] = 0;
-                led_state_array[4] = 1;
-                break;
+        if(mode == FULL) {
+            full_on();
         }
     }
 }
@@ -61,13 +48,16 @@ void interrupt led_blinking(void) {
         IOCAF = 0;
         if(RA3) {
             mode++;
-            if(mode == 5) {
+            if(mode == 6) {
                 mode = 0;
             }
+            main_counter = 0;
+            secondary_counter = 0;
         }
     }
     
     // Timer2 interrupt flag
+    // 100 Hz interrupt
     if(TMR2IF == 1) {
         TMR2IF = 0;
         
@@ -79,26 +69,67 @@ void interrupt led_blinking(void) {
             seconds_interrupt();
         }
         if(mode == BLINK) {
-            blink_counter++;
-            if(blink_counter == 50) {
-                blink_counter = 0;
+            // BLINK mode
+            main_counter++;
+            if(main_counter == 50) {
+                main_counter = 0;
                 blink();
             }
         } else if (mode == CHASE) {
-            chase_counter++;
-            if(chase_counter == 5) {
-                chase_counter = 0;
-                chase_position++;
-                if(chase_position == NB_LEDS){
-                    chase_position = 0;
+            // CHASE mode
+            main_counter++;
+            if(main_counter == 5) {
+                main_counter = 0;
+                if(CHASE_MODE == "to_top") {
+                    secondary_counter++;
+                    if(secondary_counter == NB_LEDS){
+                        secondary_counter = 0;
+                    }
+                } else if(CHASE_MODE == "to_bot") {
+                    if(secondary_counter == 0){
+                        secondary_counter = NB_LEDS;
+                    }
+                    secondary_counter--;
                 }
                 chase();
             }
         } else if (mode == SPACE) {
-            space_counter++;
-            if(space_counter == 2) {
-                space_counter = 0;
+            // SPACE mode
+            main_counter++;
+            if(main_counter == 2) {
+                main_counter = 0;
                 space();
+            }
+        } else if (mode == FAST) {
+            // FAST mode
+            main_counter++;
+            if(main_counter == 8) {
+                main_counter = 0;
+                secondary_counter++;
+                fast(secondary_counter);
+                if(secondary_counter == 9) {
+                    secondary_counter = 0;
+                }
+            }
+        } else if (mode == CHASE_MISA) {
+            // CHASE mode both size
+            main_counter++;
+            if(main_counter == 5) {
+                main_counter = 0;
+                if(chase_direction) {
+                    secondary_counter++;
+                    if(secondary_counter == NB_LEDS){
+                        chase_direction = 0;
+                        secondary_counter = NB_LEDS-2;
+                    }
+                } else {
+                    if(secondary_counter == 0){
+                        chase_direction = 1;
+                        secondary_counter = 2;
+                    }
+                    secondary_counter--;
+                }
+                chase();
             }
         }
     }
@@ -108,12 +139,20 @@ void seconds_interrupt(void) {
     NOP();
 }
 
-void full(void) {
+void full_on(void) {
     led_state_array[0] = 1;
     led_state_array[1] = 1;
     led_state_array[2] = 1;
     led_state_array[3] = 1;
     led_state_array[4] = 1;
+}
+
+void full_off(void) {
+    led_state_array[0] = 0;
+    led_state_array[1] = 0;
+    led_state_array[2] = 0;
+    led_state_array[3] = 0;
+    led_state_array[4] = 0;
 }
 
 void blink(void) {
@@ -126,9 +165,9 @@ void blink(void) {
 void chase(void) {
     unsigned char i;
     for(i=0; i<NB_LEDS; i++) {
-        if(chase_position+CHASE_SIZE > i && chase_position <= i) {
+        if(secondary_counter+CHASE_SIZE > i && secondary_counter <= i) {
             led_state_array[i] = 1;
-        } else if(chase_position+CHASE_SIZE-NB_LEDS > i) {
+        } else if(secondary_counter+CHASE_SIZE-NB_LEDS > i) {
             led_state_array[i] = 1;
         } else {
             led_state_array[i] = 0;
@@ -142,4 +181,16 @@ void space(void) {
     led_state_array[2] = rand()%2;
     led_state_array[3] = rand()%2;
     led_state_array[4] = rand()%2;   
+}
+
+void fast(unsigned char periode) {
+    unsigned char i;
+    if(periode < 6) {
+        full_off();  
+    } else {
+        for(i=0; i<NB_LEDS; i++) {
+            led_state_array[i] = !led_state_array[i];
+        }    
+    }
+
 }

@@ -11,8 +11,11 @@
 
 #include <xc.h>
 #include "header.h"
+#include <stdlib.h>
 
 void init(void){
+    // Random initialization
+    srand(1);
         
     // I/O configuration
     TRISA = 0x08;    // RA3 is a read only pin
