@@ -11,12 +11,15 @@
 #include "led.h"
 #include "init.h"
 
+#include <stdlib.h>
+
 
 void seconds_interrupt(void);
 void led_blinking_managing(short led_array[]);
 void full(void);
 void blink(void);
 void chase(void);
+void space(void);
 
 short led_state_array[NB_LEDS] = {0, 0, 0, 0, 0};
 
@@ -24,21 +27,22 @@ unsigned char seconds_counteur = 0;
 unsigned char blink_counter = 0;
 unsigned char chase_counter = 0;
 unsigned char chase_position = 0;
-unsigned char mode = 2;
+unsigned char space_counter = 0;
+unsigned char mode = 3;
 
 void main(void) {
     init();
+    
+    unsigned int k = 0;
+    srand(1);
+    
     while(1) {
+        int x=0;
+        
+        x = 9%1;
         switch(mode) {
             case FULL:
                 full();
-                break;     
-            case 3:
-                led_state_array[0] = 0;
-                led_state_array[1] = 0;
-                led_state_array[2] = 0;
-                led_state_array[3] = 1;
-                led_state_array[4] = 0;                
                 break;            
             case 4:
                 led_state_array[0] = 0;
@@ -90,6 +94,12 @@ void interrupt led_blinking(void) {
                 }
                 chase();
             }
+        } else if (mode == SPACE) {
+            space_counter++;
+            if(space_counter == 2) {
+                space_counter = 0;
+                space();
+            }
         }
     }
 }
@@ -124,4 +134,12 @@ void chase(void) {
             led_state_array[i] = 0;
         }
     }
+}
+
+void space(void) {
+    led_state_array[0] = rand()%2;
+    led_state_array[1] = rand()%2;
+    led_state_array[2] = rand()%2;
+    led_state_array[3] = rand()%2;
+    led_state_array[4] = rand()%2;   
 }
