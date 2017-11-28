@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>bike_lighting</name>
+            <name>Bike_lighting</name>
             <creation-uuid>32b33889-14f1-4b0b-ad64-f3a181e0d73a</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
