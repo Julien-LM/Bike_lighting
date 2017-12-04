@@ -1,12 +1,12 @@
 /* 
  * File:   led.h
- * Author: Julien LM
+ * Author: Julien LE MELLEC
+ * Mail: julien.lemellec@gmail.com
  *
  * Created on July 30, 2017, 10:16 PM
  */
 #ifndef LED_H
 #define	LED_H
-#endif	/* LED_H */
 
 #include "header.h"
 
@@ -18,3 +18,4 @@ void led_blinking_managing(short led_array[]) {
     led_array[4] ? LED4 = !LED4 : LED4 = 0;
 }
 
+#endif	/* LED_H */

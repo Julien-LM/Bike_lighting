@@ -1,6 +1,7 @@
 /*
  * File:   main.c
- * Author: julien LM
+ * Author: Julien LE MELLEC
+ * Mail: julien.lemellec@gmail.com
  *
  * Created on July 30, 2017, 2:34 PM
  */
